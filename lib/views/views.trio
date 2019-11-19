@@ -1,0 +1,40 @@
+view: testPodFanView_one
+appName: fossViewExamples
+order: 1
+disKey: "View One"
+src:
+  view: {inherit:"tile"}
+  layout: {var kind:"Str" defVal:"grid 6x6; 0 0 6 3; 0 3 6 3"}
+  dates: {var kind:"Span" input}
+  subView: Trio:
+    view: {inherit:"chart"}
+    dates: {var input binding:"../dates"}
+    data: {expr:"readAll(discharge and temp).hisRead({{dates}})"}
+  subView1: Trio:
+    view: {inherit:"chart"}
+    dates: {var input binding:"../dates"}
+    data: {expr:"readAll(zone and temp).hisRead({{dates}})"}
+---
+view: testPodFanView_two
+appName: fossViewExamples
+order: 2
+disKey: "View Two"
+src:
+  view: {inherit:"tile"}
+  layout: {var kind:"Str" defVal:"grid 10x10; 0 0 10 10"}
+  tableAllSites: Trio:
+   view: {inherit:"table"}
+   new: {dis:"Create Site" action:"testNewSite"}
+   edit: {dis:"Edit Site" action:"testEditSite"}
+   confirmSomething: {dis: "Confirm Dialogue" action:"testConfirm"}
+   multiSomething: {dis: "Multi Select" action:"testMulti"}
+   data: { expr: "viewTwoMain()" }
+---
+view: testPodFanview_three
+appName: fossViewExamples
+order: 3
+disKey: "View Three"
+src:
+  view: { uiType:"fossViewExamplesExt::ViewThree" }
+  search: {var kind:"Str" defVal:""}
+  data: { expr: "viewThreeMain({{search}})" }

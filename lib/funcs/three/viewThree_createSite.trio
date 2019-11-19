@@ -1,0 +1,16 @@
+name:viewThree_createSite
+func
+overridable
+doc:
+  **Overview**
+    Main orchestrator function for subview three.  This function is run every time viewThree updates.
+
+  **Parameters**
+    None
+
+  **Return**
+    A grid, containing all sites with a limited and formatted output.
+src:
+  (siteName) => do
+    diff(null, {site, dis: siteName}, {add}).commit()
+  end

@@ -1,0 +1,67 @@
+template:testNewSite
+disKey: "newTestSite"
+tags:
+  navName: {kind:"Str"}
+  age: {kind:"Date"}
+  area: {kind:"Number"}
+  connRef: {kind:"Ref"}
+  geoAddr: {kind:"Str"}
+  geoCity: {kind:"Str"}
+  geoCord: {kind:"Coord"}
+  geoCountry: {kind:"Str"}
+  geoCounty: {kind:"Str"}
+  geoPostalCode: {kind:"Str"}
+  geoState: {kind:"Str"}
+  geoStreet: {kind:"Str"}
+  tz: {kind:"Str"}
+  weatherRef: {kind:"Ref"}
+---
+template:testEditSite
+disKey: "editTestSite"
+tags:
+  id: {kind:"Ref"}
+  dis: {kind:"Str"}
+  navName: {kind:"Str"}
+  age: {kind:"Date"}
+  area: {kind:"Number"}
+  connRef: {kind:"Ref"}
+  geoAddr: {kind:"Str"}
+  geoCity: {kind:"Str"}
+  geoCord: {kind:"Coord"}
+  geoCountry: {kind:"Str"}
+  geoCounty: {kind:"Str"}
+  geoPostalCode: {kind:"Str"}
+  geoState: {kind:"Str"}
+  geoStreet: {kind:"Str"}
+  tz: {kind:"Str"}
+  weatherRef: {kind:"Ref"}
+  site: {kind:"Marker"}
+---
+template:testEditMultiSite
+disKey: "editTestSite"
+tags:
+  id: {kind:"Ref"}
+  dis: {kind:"Str"}
+  navName: {kind:"Str"}
+  age: {kind:"Date"}
+  area: {kind:"Number"}
+  connRef: {kind:"Ref"}
+  geoAddr: {kind:"Str"}
+  geoCity: {kind:"Str"}
+  geoCord: {kind:"Coord"}
+  geoCountry: {kind:"Str"}
+  geoCounty: {kind:"Str"}
+  geoPostalCode: {kind:"Str"}
+  geoState: {kind:"Str"}
+  geoStreet: {kind:"Str"}
+  tz: {kind:"Str"}
+  weatherRef: {kind:"Ref"}
+  site: {kind:"Marker"}
+  mod: {kind:"DateTime"}
+---
+template:testAction
+disKey: "testOne"
+tags:
+  testTagOne: {kind: "Str"}
+  testTagTwo: {kind: "Number"}
+  testTagThree: {kind: "Date"}

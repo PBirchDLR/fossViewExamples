@@ -1,0 +1,56 @@
+name:viewTwoMain
+func
+overridable
+doc:
+  **Overview**
+    Main orchestrator function for subview two.
+
+    Based on value of 'subViewSelector', returns either all points, equip, or sites based on value of 'site'.
+  **Parameters**
+    None
+
+  **Return**
+    A grid, containing all sites with a limited and formatted output.
+src:
+  () => do
+    allSites: readAll(site)
+
+    //Name of columns to be formatted
+    //Add new columns here
+    colMetas: [
+    {name: "id", dis: "Site"},
+    {name: "navName", dis: "Dipslay Name"},
+    {name: "age", dis: "Age"},
+    {name: "area", dis: "Area"},
+    {name: "tz", dis: "Time Zone"},
+    {name: "weatherRef", dis: "Weather Reference"},
+    {name: "geoCountry", dis: "Country Code"},
+    {name: "geoCity", dis: "City Code"},
+    {name: "geoCord", dis: "Coordinates"},
+    {name: "geoCounty", dis: "County"},
+    {name: "geoPostalCode", dis: "Postal Code"},
+    {name: "geoState", dis: "State"},
+    {name: "geoStreet", dis: "Street"},
+    {name: "mod", dis:"Modified"},
+    {name: "connRef", dis: "Connector Reference"},
+    {name: "geoAddr", dis: "Address"}
+    ].toGrid()
+
+    // Set column to "null" if it isnt found.
+    colMetas.each() colMeta => do
+      if (not allSites.has(colMeta["name"])) do
+        allSites = allSites.addCol(colMeta["name"], v=> null)
+      end
+    end
+
+    // Reorders the columns according to the order of the list
+    allSites = allSites.reorderCols(colMetas.colToList("name"))
+
+    // Adds the dis tag
+    colMetas.each() colMeta => do
+      allSites = allSites.addColMeta(colMeta["name"], { dis: colMeta["dis"] })
+    end
+
+    return allSites
+  end
+
