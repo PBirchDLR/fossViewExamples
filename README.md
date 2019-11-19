@@ -30,6 +30,7 @@ To define a custom application for this view to be contained inside of, add it i
 
 This view takes the concepts from view 1 and adds on custom action buttons to them.  Action buttons documentation are in the docFresco|Actions documentation in SkySpark.  The action buttons are defined via fantom code in 'fan/FossViewExamplesLib.fan'.
   
+  ```
   @Axon { meta =
   Str<|disKey: "fossViewExamplesExt::testMulti"
        admin
@@ -44,6 +45,7 @@ This view takes the concepts from view 1 and adds on custom action buttons to th
     }
     echo("Do Something here")
   }
+```
 
 The action has two main sections, header information and the code you want to execute.
 This view also uses a custom Axon script to load data, contained inside 'lib/funcs/two/viewTwoMain.trio'.
@@ -52,25 +54,27 @@ This view also uses a custom Axon script to load data, contained inside 'lib/fun
 
 To take the development of our sample application one step further, we drop down fully into Fantom and develop a custom UI using domkit.  The first step is defining our view as a custom UI type.  This points to a fantom file, located inside of 'fan/ui/TestPodFanViewThree.fan'.
 
-  view: testPodFanview_three
-  appName: fossViewExamples
-  order: 3
-  disKey: "View Three"
-  src:
-    view: { uiType:"fossViewExamplesExt::ViewThree" }
-    search: {var kind:"Str" defVal:""}
-    data: { expr: "viewThreeMain({{search}})" }
+```
+view: testPodFanview_three
+appName: fossViewExamples
+order: 3
+disKey: "View Three"
+src:
+  view: { uiType:"fossViewExamplesExt::ViewThree" }
+  search: {var kind:"Str" defVal:""}
+  data: { expr: "viewThreeMain({{search}})" }
+```
 
 The Axon function inside the data tag of our view definition is ran on every screen update.  Inside the fantom function, all domkit UI elemnts are located inside onUpdate.
 
+```
   @Js
   public class MyTestView: UiView 
   {
-  
     public override Void onUpdate() 
     {
       //Things put in here are executed on every page update.
       // This is where you put your custom domKit code.
     }
-
   }
+```
