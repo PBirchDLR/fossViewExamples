@@ -11,15 +11,15 @@ If you are new to building POD’s in SkySpark, please see the next section of t
 This documentation is not designed to replace the existing SkySpark documentation, its designed to be a supplement to help you get started with building pods.  Some helpful documentation links from SkyFoundry are below.
 The extStub documentation shows you a simple to use command line prompt that generates a fresh POD from scratch.
 
-`https://skyfoundry.com/doc/docSkySpark/Exts#extStub`
+[extStub](https://skyfoundry.com/doc/docSkySpark/Exts#extStub)
 
 The docFresco section provides a lot of useful resources around POD based applications.  Specifically, the views, actions, and templates sections are useful.
 
-`https://skyfoundry.com/doc/docFresco/Overview`
+[docFresco](https://skyfoundry.com/doc/docFresco/Overview)
 
 DomKit is the UI class that is used to create custom looking user interfaces.  It provides custom organization elements and a large selection of controls (like buttons, drop down boxes, ect).
 
-`https://skyfoundry.com/doc/domkit/index`
+[domKit](https://skyfoundry.com/doc/domkit/index)
 
 **View 1**
 
